@@ -17,6 +17,14 @@
         <servlet-name>LogonServlet</servlet-name>
         <servlet-class>servletpackage.LogonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servletpackage.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Startpage</servlet-name>
+        <servlet-class>servletpackage.Startpage</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>ServletTwo</servlet-name>
@@ -28,7 +36,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogonServlet</servlet-name>
-        <url-pattern>/LogonServlet</url-pattern>
+        <url-pattern>LogonServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Startpage</servlet-name>
+        <url-pattern>/Startpage</url-pattern>
     </servlet-mapping>
 
 

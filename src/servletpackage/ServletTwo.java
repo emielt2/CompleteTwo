@@ -39,7 +39,7 @@ class StringsForHtml {
             "<p>Name : <input type=\"text\" ng-model=\"name\" placeholder=\"Enter name here\"></p>\n" + "<h1>Hello {{name}}</h1>";
 
     static String stringSTART = "<!doctype html>\n" + "<html ng-app>\n" + "<head>\n" + "<title>My Angular App</title>\n" +
-            "<script src=\"http://code.angularjs.org/angular-0.10.6.js\"></script>\n" + "    </head>\n" + "    <body>\n";
+            "<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js\"></script>\n" +"<link rel=\"stylesheet\" href=\"css/styles.css\">"+ "    </head>\n" + "    <body>\n";
     static String stringEND =  "</body>\n" + "  </html>";
 
     static String fullHTML_SoloSeven = "<!DOCTYPE html>\n" +

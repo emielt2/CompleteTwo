@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="CompleteTwo:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/CompleteTwo_war_exploded.war</output-path>
+  <artifact type="exploded-war" build-on-make="true" name="ComTwo">
+    <output-path>$PROJECT_DIR$/out/artifacts/ComTwo.war</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="CompleteTwo/web/Web" />
       <element id="directory" name="WEB-INF">

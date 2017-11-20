@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>AJAX with Servlets using AngularJS</title>
+    <script type="text/javascript" src="http://code.angularjs.org/angular-0.10.6.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+
+        function MyController($scope, $http) {
+
+            $scope.getDataFromServer = function() {
+                $http({
+                    method : 'GET',
+                    url : 'HelloWorld'
+                }).success(function(data, status, headers, config) {
+                    $scope.person = data;
+                    console.log("ai ai");
+                }).error(function(data, status, headers, config) {
+                    console.log("ai ai");
+
+                    //console.log("ai ai");
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+
+            };
+        };
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <!--<div ng-controller="MyController" ng-model="person=[{firstName:'Jani',lastName:'Norway'}]">-->
+        <div ng-controller="MyController">
+        <button ng-click="getDataFromServerx()">Fetch data from server</button>
+        <p>First Name : {{person.firstName}}</p>
+        <p>Last Name : {{person.lastName}}</p>
+        <p>{{1+3}}</p>
+    </div>
+</div>
+</body>
+</html>
