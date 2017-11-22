@@ -90,7 +90,7 @@ public class Startpage extends HttpServlet {
         printHTMLBodyTagsWithoutNGAPP(response, writer);
         //doGet(request, response);
         writer.println("<form method=GET action=Startpage>");
-        writer.println("h2>Timer: "+planet.getTimer()+"</h2>");
+        writer.println("<h2>Timer: "+planet.getTimer()+"</h2>");
         writer.println("<input type=submit value='go get'>" +
                 "</form>");
         writer.println("</body></html>");
