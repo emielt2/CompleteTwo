@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Startpage")
-public class Startpage extends HttpServlet {
+@WebServlet(name = "StartpageNGTWO")
+public class StartpageNGTWO extends HttpServlet {
     @Inject
     Planet planet;
 
@@ -26,6 +26,8 @@ public class Startpage extends HttpServlet {
 
         //writer.println("<h2>"+giveFiveFive()+"</h2>");
         planet.startTimer();
+        writer.println("<h3>5+5 = {{5+5}}</h3>");
+        writer.println("<h3>5+5 = {5+5}</h3>");
         writer.println(
 //                "<!DOCTYPE html>\n" +
 //                "<html>\n" +
@@ -38,6 +40,7 @@ public class Startpage extends HttpServlet {
                 "<h2>" + planet.getNaming() + "</h2>" +
 
                         "<div ng-app=\"myApp\" ng-controller=\"namesCtrl\">\n" +
+                        "<p>My first expression: 5+5={{ 5 + 5 }}</p>" +
                         "\n" +
                         "<table border=\"1\" width=\"100%\">\n" +
                         "<tr>\n" +
@@ -70,16 +73,21 @@ public class Startpage extends HttpServlet {
                         "    }\n" +
                         "});\n" +
                         "</script>\n" +
-                        "<form method=GET action=Startpage>" +
+                        "<form method=GET action=StartpageNGTWO>" +
                         //"Username=<input type=text name=username ng-minlength=\"5\" required placeholder=\"Please Specify\" value=emiel>"+
                         //"Password=<input type=text name=password placeholder=\"Please Specify\" value=123>"+
                         "<input type=submit value='Go to timer'>" +
                         "</form>"+
                         "\n" + "<form method=POST action=>" +
-//                "\n" +"<form action=/StartPage method=GET>"+
-//                        "<form method=GET action=StartPage>"
+//                "\n" +"<form action=/StartpageNGTWO method=GET>"+
+//                        "<form method=GET action=StartpageNGTWO>"
                         "<input type=submit value=Submit>" +
+
                         "</form>" +
+                        "<h3>5+5 = {{5+5}}</h3>" +
+
+
+
                         "</body>\n" +
                         "</html>");
         //writer.println("</body></html>");
@@ -90,7 +98,7 @@ public class Startpage extends HttpServlet {
         PrintWriter writer = response.getWriter();
         printHTMLBodyTagsWithoutNGAPP(response, writer);
         //doGet(request, response);
-        writer.println("<form method=GET action=Startpage>");
+        writer.println("<form method=GET action=StartpageNGTWO>");
         writer.println("<h2>Timer: "+planet.getTimer()+"</h2>");
         writer.println("<input type=submit value='go get'>" +
                 "</form>");
@@ -103,7 +111,7 @@ public class Startpage extends HttpServlet {
                 "<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js\"></script>\n" + "<link rel=\"stylesheet\" href=\"css/styles.css\">" + "    </head>\n" + "    <body>\n");
 //                "<script src=\"http://code.angularjs.org/angular-0.10.6.js\"></script>\n" + "<link rel=\"stylesheet\" href=\"css/styles.css\">" + "    </head>\n" + "    <body>\n");
 
-        writer.println("<h4>Startpage OLD</h4>");
+        writer.println("<h4>StartpageNGTWO</h4>");
     }
 
     private void printHTMLBodyTagsWithoutNGAPP(HttpServletResponse response, PrintWriter writer) {
@@ -112,7 +120,7 @@ public class Startpage extends HttpServlet {
                 "<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js\"></script>\n" + "<link rel=\"stylesheet\" href=\"css/styles.css\">" + "    </head>\n" + "    <body>\n");
 //                "<script src=\"http://code.angularjs.org/angular-0.10.6.js\"></script>\n" + "<link rel=\"stylesheet\" href=\"css/styles.css\">" + "    </head>\n" + "    <body>\n");
 
-        writer.println("<h4>Startpage OLD</h4>");
+        writer.println("<h4>StartpageNGTWO</h4>");
     }
 
     private int giveFiveFive() {

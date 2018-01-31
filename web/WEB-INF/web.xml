@@ -26,6 +26,11 @@
         <servlet-class>servletpackage.Startpage</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>StartpageNGTWO</servlet-name>
+        <servlet-class>servletpackage.StartpageNGTWO</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>ServletTwo</servlet-name>
         <url-pattern>/ServletTwo</url-pattern>
@@ -41,6 +46,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StartpageNGTWO</servlet-name>
+        <url-pattern>/StartpageNGTWO</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Startpage</servlet-name>

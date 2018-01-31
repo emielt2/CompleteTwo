@@ -24,5 +24,6 @@
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="angular-0.10.6" level="application" />
     <orderEntry type="library" name="JBoss Weld-2.0.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="JBoss 9.0.0.Final DEV" level="application_server_libraries" />
   </component>
 </module>

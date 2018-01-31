@@ -1,6 +1,7 @@
 package servletpackage;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,13 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import com.google.gson.Gson;
 
 @WebServlet(name = "Login")
 public class Login extends HttpServlet {
+    String lastResult ="";
+    int totalFails=0;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.setContentType("text/html");
         //PrintWriter writer = response.getWriter();
@@ -27,7 +26,15 @@ public class Login extends HttpServlet {
 //            ob.doPost(request, response);
 //            new Startpage().doGet(request, response);//WORKS
             //Startpage sp = new Startpage()
-            RequestDispatcher rd = request.getRequestDispatcher("/Startpage");
+
+
+
+
+
+            //RequestDispatcher rd = request.getRequestDispatcher("/Startpage");//WORKED
+            RequestDispatcher rd = request.getRequestDispatcher("/StartpageNGTWO");
+
+
             //RequestDispatcher rd = request.getRequestDispatcher("/HelloWorld");//GOES TO POST
             rd.forward(request,response);
 //            RequestDispatcher rd = request.getRequestDispatcher("ServletTwo");
@@ -35,6 +42,7 @@ public class Login extends HttpServlet {
         }
         else{
           //  writer.print("<h2>Login WRONG!!! AngularCheck:{{1+1}}</h2>");
+            lastResult="ERRRROR WRONG USERNAME OR PASSWORD! Total Failed Tries = "+ ++totalFails;
             doGet(request,response);
         }
 
@@ -82,6 +90,8 @@ public class Login extends HttpServlet {
         writer.println("Username=<input type=text name=username ng-minlength=\"5\" required placeholder=\"Please Specify\" value=emiel>");
         writer.println("Password=<input type=text name=password placeholder=\"Please Specify\" value=123>");
         writer.println("<input type=submit value='LogonPOST'>");
+
+        writer.println("<h3>" + lastResult +" </h3>");
 
         writer.println("</body>");
         writer.println("</html>");
